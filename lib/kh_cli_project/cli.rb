@@ -1,12 +1,10 @@
+require_relative "./version.rb"
+
 class KhCliProject::Cli
     def start
-        list_recipes
+        KhCliProject::GetRecipes.new.create_recipes
+        KhCliProject::Recipes.all
         options
-    end
-
-    def list_recipes
-        puts "1. Ginger Champagne"
-        puts "2. Potato and Cheese Frittata"
     end
 
     def options
@@ -20,7 +18,7 @@ class KhCliProject::Cli
         puts "Would you like to view more recipes or exit? (more/exit)"
         input_2 = gets.chomp
         if input_2 == "more"
-            call
+            start
         else
             puts "Goodbye!"
         end

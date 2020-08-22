@@ -1,17 +1,24 @@
-require 'net/http'
-require 'open-uri'
-require 'json'
 require 'pry'
 
-class Recipes
-    URL = "http://www.recipepuppy.com/api/"
+require_relative "./version.rb"
 
-    def get_recipes
-        uri = URI.parse(URL)
-        response = Net::HTTP.get_response(uri)
-        response.body
-        binding.pry
+class KhCliProject::Recipes
+    attr_accessor :name, :link, :ingredients, :thumbnail
+
+    @@all = []
+
+    def initialize(name = nil, link = nil, ingredients = nil, thumbnail = nil)
+        @name = name
+        @link = link
+        @ingredients = ingredients
+        @thumbnail = thumbnail
+        @@all << self
     end
 
-
+    def self.all
+        @@all
+    end
 end
+
+
+
