@@ -1,7 +1,6 @@
 require 'net/http'
 require 'open-uri'
 require 'json'
-require 'pry'
 
 require_relative "../kh_cli_project/recipes.rb"
 require_relative "./version.rb"
@@ -22,10 +21,6 @@ class KhCliProject::GetRecipes
         all_recipes.map do |recipe|
             KhCliProject::Recipes.new(recipe["title"], recipe["href"], recipe["ingredients"], recipe["thumbnail"])
         end
-    end
-
-    def recipes_with_index
-        create_recipes.each.with_index(1) {|recipe, i| puts "#{i}. #{recipe}"}
     end
 end
 
