@@ -1,8 +1,6 @@
 # KhCliProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kh_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is gem provides a CLI that lists recipes from RecipePuppy.com. You can view details of a particular recipe through the CLI.
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the command below and follow the on screen prompts.
+
+    $ kh_cli_project
 
 ## Development
 
