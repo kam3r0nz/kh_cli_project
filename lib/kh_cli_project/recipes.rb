@@ -17,6 +17,3 @@ class KhCliProject::Recipes
         @@all
     end
 end
-
-
-
