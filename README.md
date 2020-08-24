@@ -1,6 +1,6 @@
 # KhCliProject
 
-This is gem provides a CLI that lists recipes from RecipePuppy.com. You can view details of a particular recipe through the CLI.
+This gem provides a CLI that lists recipes from RecipePuppy.com. You can view details of a particular recipe through the CLI.
 
 ## Installation
 
