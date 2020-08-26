@@ -1,4 +1,5 @@
 require_relative "./version.rb"
+require 'pry'
 
 class KhCliProject::Cli
     def start
@@ -36,27 +37,11 @@ class KhCliProject::Cli
         puts ""
         puts "Please choose a recipe by number to view the ingredients and the link to that recipe:"
         input = gets.chomp
+        index = input.to_i - 1
+        # binding.pry
         puts ""
-        if input == "1"
-            puts KhCliProject::Recipes.all[0].name, KhCliProject::Recipes.all[0].ingredients,  KhCliProject::Recipes.all[0].link
-        elsif input == "2"
-            puts KhCliProject::Recipes.all[1].name, KhCliProject::Recipes.all[1].ingredients,  KhCliProject::Recipes.all[1].link
-        elsif input == "3"
-            puts KhCliProject::Recipes.all[2].name, KhCliProject::Recipes.all[2].ingredients,  KhCliProject::Recipes.all[2].link
-        elsif input == "4"
-            puts KhCliProject::Recipes.all[3].name, KhCliProject::Recipes.all[3].ingredients,  KhCliProject::Recipes.all[3].link
-        elsif input == "5"
-            puts KhCliProject::Recipes.all[4].name, KhCliProject::Recipes.all[4].ingredients,  KhCliProject::Recipes.all[4].link
-        elsif input == "6"
-            puts KhCliProject::Recipes.all[5].name, KhCliProject::Recipes.all[5].ingredients,  KhCliProject::Recipes.all[5].link
-        elsif input == "7"
-            puts KhCliProject::Recipes.all[6].name, KhCliProject::Recipes.all[6].ingredients,  KhCliProject::Recipes.all[6].link
-        elsif input == "8"
-            puts KhCliProject::Recipes.all[7].name, KhCliProject::Recipes.all[7].ingredients,  KhCliProject::Recipes.all[7].link
-        elsif input == "9"
-            puts KhCliProject::Recipes.all[8].name, KhCliProject::Recipes.all[8].ingredients,  KhCliProject::Recipes.all[8].link
-        elsif input == "10"
-            puts KhCliProject::Recipes.all[9].name, KhCliProject::Recipes.all[9].ingredients,  KhCliProject::Recipes.all[9].link
+        if index >= 0 && index < KhCliProject::Recipes.all.length
+            puts KhCliProject::Recipes.all[index].name, KhCliProject::Recipes.all[index].ingredients,  KhCliProject::Recipes.all[index].link
         else
             puts "Sorry I don't understand that response. Try again!"
             puts ""
