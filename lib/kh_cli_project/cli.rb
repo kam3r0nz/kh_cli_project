@@ -15,9 +15,9 @@ class KhCliProject::Cli
     end
 
     def options
-        puts "Please choose an option: List recipes or exit?"
+        puts "Please choose an option: View recipes or exit? (recipes/exit)"
         input = gets.chomp
-        if input == "list" || input == "recipes" || input == "list recipes"
+        if input == "recipes"
             puts ""
             list_recipes
             puts ""
