@@ -8,9 +8,9 @@ class KhCliProject::Cli
     end
 
     def greeting
-        puts "- - - - - - - - - - - - "
-        puts "Welcome to RecipePuppy!"
-        puts "- - - - - - - - - - - - "
+        puts "- - - - - - - - - - - - - -"
+        puts "- Welcome to RecipePuppy! -"
+        puts "- - - - - - - - - - - - - -"
         puts ""
     end
 
@@ -23,7 +23,7 @@ class KhCliProject::Cli
             puts ""
         elsif input == "exit"
             puts ""
-            puts "Goodbye!"
+            puts "Goodbye! Hope to see you again."
             exit
         else
             puts "Sorry! I don't understand that response. Try again!"
@@ -34,12 +34,14 @@ class KhCliProject::Cli
     def list_recipes
         KhCliProject::Recipes.all.each.with_index(1) {|recipe, index| puts "#{index}. #{recipe.name}"}
         puts ""
-        puts "Please choose a recipe by number to view the ingredients and the link to that recipe:"
+        puts "Please choose a recipe by number to view more details:"
         input = gets.chomp
         index = input.to_i - 1
         puts ""
         if index >= 0 && index < KhCliProject::Recipes.all.length
-            puts KhCliProject::Recipes.all[index].name, KhCliProject::Recipes.all[index].ingredients,  KhCliProject::Recipes.all[index].link
+            puts "- #{KhCliProject::Recipes.all[index].name} -"
+            puts "• Ingredients: #{KhCliProject::Recipes.all[index].ingredients}"
+            puts "• View full recipe: #{KhCliProject::Recipes.all[index].link}"
         else
             puts "Sorry I don't understand that response. Try again!"
             puts ""
@@ -56,7 +58,7 @@ class KhCliProject::Cli
         if input == "recipes"
             list_recipes
         elsif input == "exit"
-            puts "Goodbye! Hope to see you soon."
+            puts "Goodbye! Hope to see you again."
             exit
         else
             puts "Sorry I don't understand that response. Try again!"
