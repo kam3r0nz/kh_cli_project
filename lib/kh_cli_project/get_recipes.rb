@@ -13,7 +13,7 @@ class KhCliProject::GetRecipes
         uri = URI.parse(URL)
         response = Net::HTTP.get_response(uri)
         results = JSON.parse(response.body)
-        recipes = results["results"]
+        results["results"]
     end
 
     def create_recipes
