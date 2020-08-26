@@ -1,3 +1,5 @@
+require 'pry'
+
 require_relative "./version.rb"
 
 class KhCliProject::Recipes
@@ -12,7 +14,7 @@ class KhCliProject::Recipes
         @thumbnail = thumbnail
         @@all << self
     end
-    
+
     def self.all
         @@all
     end

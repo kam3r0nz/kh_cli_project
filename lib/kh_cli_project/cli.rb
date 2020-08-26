@@ -24,7 +24,7 @@ class KhCliProject::Cli
         elsif input == "exit"
             puts ""
             puts "Goodbye!"
-            puts ""
+            exit
         else
             puts "Sorry! I don't understand that response. Try again!"
             options
@@ -74,6 +74,7 @@ class KhCliProject::Cli
             list_recipes
         elsif input == "exit"
             puts "Goodbye! Hope to see you soon."
+            exit
         else
             puts "Sorry I don't understand that response. Try again!"
             puts ""
