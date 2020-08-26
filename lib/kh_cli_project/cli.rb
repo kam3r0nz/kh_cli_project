@@ -1,5 +1,4 @@
 require_relative "./version.rb"
-require 'pry'
 
 class KhCliProject::Cli
     def start
@@ -38,7 +37,6 @@ class KhCliProject::Cli
         puts "Please choose a recipe by number to view the ingredients and the link to that recipe:"
         input = gets.chomp
         index = input.to_i - 1
-        # binding.pry
         puts ""
         if index >= 0 && index < KhCliProject::Recipes.all.length
             puts KhCliProject::Recipes.all[index].name, KhCliProject::Recipes.all[index].ingredients,  KhCliProject::Recipes.all[index].link
