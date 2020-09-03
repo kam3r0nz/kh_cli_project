@@ -2,9 +2,6 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
-require_relative "./version.rb"
-
-
 class KhCliProject::GetRecipes
     URL = "http://www.recipepuppy.com/api/"
 

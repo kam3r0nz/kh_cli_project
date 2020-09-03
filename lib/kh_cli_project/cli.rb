@@ -1,5 +1,3 @@
-require_relative "./version.rb"
-
 class KhCliProject::Cli
     def start
         KhCliProject::GetRecipes.new.create_recipes

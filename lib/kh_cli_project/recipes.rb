@@ -1,7 +1,3 @@
-require 'pry'
-
-require_relative "./version.rb"
-
 class KhCliProject::Recipes
     attr_accessor :name, :link, :ingredients, :thumbnail
 
