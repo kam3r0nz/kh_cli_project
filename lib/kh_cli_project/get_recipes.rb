@@ -2,7 +2,6 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
-require_relative "../kh_cli_project/recipes.rb"
 require_relative "./version.rb"
 
 
@@ -18,8 +17,6 @@ class KhCliProject::GetRecipes
 
     def create_recipes
         all_recipes = self.get_data
-        all_recipes.map do |recipe|
-            KhCliProject::Recipes.new(recipe["title"], recipe["href"], recipe["ingredients"], recipe["thumbnail"])
-        end
+        all_recipes.map {|recipe| KhCliProject::Recipes.new(recipe["title"], recipe["href"], recipe["ingredients"], recipe["thumbnail"])}
     end
 end
